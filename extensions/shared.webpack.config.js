@@ -49,11 +49,6 @@ function withNodeDefaults(/**@type WebpackConfig & { context: string }*/extConfi
 					// * enable sources maps for end-to-end source maps
 					loader: 'ts-loader',
 					options: tsLoaderOptions
-				}, {
-					loader: path.resolve(__dirname, 'mangle-loader.js'),
-					options: {
-						configFile: path.join(extConfig.context, 'tsconfig.json')
-					},
 				},]
 			}]
 		},
@@ -130,12 +125,6 @@ function withBrowserDefaults(/**@type WebpackConfig & { context: string }*/extCo
 							...tsLoaderOptions,
 							...(additionalOptions ? {} : { configFile: additionalOptions.configFile }),
 						}
-					},
-					{
-						loader: path.resolve(__dirname, 'mangle-loader.js'),
-						options: {
-							configFile: path.join(extConfig.context, additionalOptions?.configFile ?? 'tsconfig.json')
-						},
 					},
 				]
 			}]
