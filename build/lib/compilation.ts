@@ -105,7 +105,7 @@ export function transpileTask(src: string, out: string, swc: boolean): () => Nod
 	};
 }
 
-export function compileTask(src: string, out: string, build: boolean, options: { disableMangle?: boolean } = {}): () => NodeJS.ReadWriteStream {
+export function compileTask(src: string, out: string, build: boolean): () => NodeJS.ReadWriteStream {
 
 	return function () {
 
