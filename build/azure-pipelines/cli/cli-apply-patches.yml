@@ -1,5 +1,0 @@
-steps:
-  - template: ../distro/download-distro.yml
-
-  - script: node .build/distro/cli-patches/index.js
-    displayName: Apply distro patches
